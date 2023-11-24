@@ -125,4 +125,32 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
     }
 
+        //Helper method to find the leftmost node
+    private Node digLeft(Node node){
+        Node cur= node;
+        while (cur.left !=null) {
+            cur = cur.left;
+        }
+        return cur;
+    }
+
+    //Helper method to find the rightmost node
+    private Node digRight(Node node){
+        Node cur= node;
+        while (cur.right !=null) {
+            cur = cur.right;
+        }
+        return cur;
+    }
+    // returns true if the element exists in the tree
+    public boolean contains(T elem){
+        return contains(root,elem);
+    }
+    // private recursive method to find an element in the tree
+    private boolean contains(Node node, T elem){
+        // Base case: reached bottom value;
+    }
+
+    
+
 }
