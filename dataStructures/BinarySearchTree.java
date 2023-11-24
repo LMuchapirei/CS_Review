@@ -149,8 +149,16 @@ public class BinarySearchTree<T extends Comparable<T>> {
     // private recursive method to find an element in the tree
     private boolean contains(Node node, T elem){
         // Base case: reached bottom value;
-    }
+        if(node == null) return false;
+        int cmp = elem.compareTo(node.data);
+        // Dig into the left subtree because the value we're looking for is smaller than the current value
+        if(cmp < 0) return contains(node.left,elem);
 
-    
+        // Dig into the right subtree because the value we're looking for is greater than the current value
+        else if(cmp > 0) return contains(node.right,elem);
+
+        // We found the value we were looking for
+        else return true;
+    }
 
 }
